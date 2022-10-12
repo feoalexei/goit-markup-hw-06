@@ -69,16 +69,20 @@
               <button class="btn portfolio__btn" type="button">Усі</button>
             </li>
             <li>
-              <button class="btn portfolio-btn" type="button">Веб-сайти</button>
+              <button class="btn portfolio__btn" type="button">
+                Веб-сайти
+              </button>
             </li>
             <li>
-              <button class="btn portfolio-btn" type="button">Додатки</button>
+              <button class="btn portfolio__btn" type="button">Додатки</button>
             </li>
             <li>
-              <button class="btn portfolio-btn" type="button">Дизайн</button>
+              <button class="btn portfolio__btn" type="button">Дизайн</button>
             </li>
             <li>
-              <button class="btn portfolio-btn" type="button">Маркетинг</button>
+              <button class="btn portfolio__btn" type="button">
+                Маркетинг
+              </button>
             </li>
           </ul>
           <ul class="portfolio__cards">
@@ -306,7 +310,7 @@
     <!-- Footer-->
     <footer class="footer">
       <div class="container footer-container">
-        <div>
+        <div class="footer__contacts-wrap">
           <a class="logo footer__logo" href="#"><span>Web</span>Studio</a>
           <address>
             <ul class="footer__contacts">
@@ -328,8 +332,8 @@
           </address>
         </div>
 
-        <div class="footer__social">
-          <p class="footer__social-text">Приєднуйтесь</p>
+        <div class="footer__social-wrap">
+          <p class="footer__title">Приєднуйтесь</p>
           <ul class="social-list">
             <li class="social-item">
               <a class="social-link footer__social-link" href="">
@@ -360,6 +364,24 @@
               </a>
             </li>
           </ul>
+        </div>
+
+        <div class="footer__form-wrap">
+          <p class="footer__title">Підпишіться на розсилку</p>
+          <form class="footer__form">
+            <input
+              class="footer__form-input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+            />
+            <button class="btn main-btn" type="submit">
+              Підписатися
+              <svg class="submit-icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-form-subscribe"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </footer>

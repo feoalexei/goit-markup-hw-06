@@ -4,6 +4,7 @@
     --grey-color:#757575;
     --grey-icon-color:#AFB1B8;
     --blue-color:#2196F3;
+    --darker-blue-color: #188CE8;
     --white-color:#fff;
     --semi-white-color: rgba(255,255,255,.5);
     --weak-white-color:rgba(255,255,255,.1);
@@ -64,6 +65,11 @@ a {
     background-color: var(--blue-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     padding: 10px 32px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-btn:hover {
+    background-color: var(--darker-blue-color);
 }
 
 .section {
@@ -384,7 +390,7 @@ a {
     margin-left: 8px;
 }
 
-.portfolio-btn {
+.portfolio__btn {
     font-weight: 500;
     line-height: 1.6;
     background-color: var(--light-background);
@@ -540,7 +546,7 @@ a {
 
 }
 
-.footer__form-email {
+.footer__form-input {
     width: 358px;
     height: 50px;
     padding: 15px 16px;
@@ -611,6 +617,7 @@ a {
     fill: var(--black-color);
     padding: 0;
     cursor: pointer;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal__close-btn:hover {
@@ -624,24 +631,35 @@ a {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--dark-color);
-    margin-bottom: 12px;
+    margin-bottom: 30px;
 }
 
 .modal__form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
 }
 
-.modal__form-label {
+.modal__form-fields {
+    margin-bottom: 20px;
+}
+
+.modal__form-field:not(:last-child){
+    margin-bottom: 28px;
+}
+
+.modal__form-field {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 4px;
     width: 100%;
+}
+
+.modal__form-label {
+    position: absolute;
+    top: -18px;
     color: var(--grey-color);
 }
 
@@ -649,13 +667,25 @@ a {
     min-height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    padding-left: 42px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .input-icon {
+.input-icon {
     position: absolute;
-    top: 31px;
+    top: 50%;
     left: 15px;
+    transform: translateY(-50%);
     fill: var(--dark-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__form-input:focus {
+    border-color: var(--blue-color);
+}
+
+.modal__form-input:focus + .input-icon {
+    fill: var(--blue-color);
 }
 
 textarea.modal__form-input {
@@ -666,8 +696,84 @@ textarea.modal__form-input::placeholder {
     color: rgba(117, 117, 117, 0.5);
 }
 
+.modal__agree {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8.38px;
+    margin: 0 auto 30px;
+}
 
+.input-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
 
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.modal__checkbox-label {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    min-width: 400.62px;
+    color: var(--grey-color);
+    padding-left: 13px;
+}
+
+.modal__checkbox-label::after {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    content:'';
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--dark-color);
+    border-radius: 2px;
+    background-color: var(--white-color);
+}
+
+.check-icon {
+    position: absolute;
+    top: 50%;
+    left: -9px;
+    transform: translateY(-50%);
+    z-index: 1;
+    height: 0;
+}
+
+.agreement__link {
+    position: relative;
+    color: var(--blue-color);
+}
+
+.input-checkbox:checked + .modal__checkbox-label::after {
+    border: 2px solid var(--blue-color);
+    background-color: var(--blue-color);
+}
+
+.input-checkbox:checked + .modal__checkbox-label > .check-icon {
+    height: 13px;
+}
+
+.agreement__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--blue-color);
+}
 
 .modal .main-btn {
     margin: 0 auto;
