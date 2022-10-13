@@ -58,6 +58,10 @@ a {
     font-size: 16px;
 }
 
+.btn:focus {
+    outline: none;
+}
+
 .main-btn {
     font-weight: 700;
     line-height: 1.9;
@@ -628,6 +632,7 @@ a {
 .modal__close-btn:hover,
 .modal__close-btn:focus {
     fill: var(--blue-color);
+    outline: none;
 }
 
 .modal__title {
