@@ -688,6 +688,7 @@ a {
 
 .modal__form-input:focus {
     border-color: var(--blue-color);
+    outline: none;
 }
 
 .modal__form-input:focus + .input-icon {
@@ -736,6 +737,7 @@ textarea.modal__form-input::placeholder {
     letter-spacing: 0.03em;
     min-width: 400.62px;
     color: var(--grey-color);
+    cursor: pointer;
     padding-left: 13px;
 }
 
@@ -749,6 +751,7 @@ textarea.modal__form-input::placeholder {
     height: 15px;
     border: 2px solid var(--dark-color);
     border-radius: 2px;
+    cursor: pointer;
     background-color: var(--white-color);
     transition: 
         border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -761,6 +764,7 @@ textarea.modal__form-input::placeholder {
     transform: translateY(-50%);
     z-index: 1;
     height: 0;
+    cursor: pointer;
     transition:
         height 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
